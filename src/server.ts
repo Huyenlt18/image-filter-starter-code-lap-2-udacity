@@ -31,7 +31,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
             let image_url = req.query.image_url;
             console.log(image_url)
             const validateImage = image_url.match(/^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/);
-            
             if(validateImage == null){
                 return res.status(400).send("URL is invalid! Please try again!!")
             }
@@ -46,7 +45,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
                 }
             }
         }catch{
-            console.log("imageFilter1111");
             return res.status(500).send({error:'Internal Server Error'})
         }
     } );
