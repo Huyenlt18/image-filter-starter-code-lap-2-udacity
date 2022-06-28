@@ -26,7 +26,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    image_url: URL of a publicly accessible image
   // RETURNS
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
-  app.get( "/filteredimage", async ( req, res ) => {
+  app.get( "/filteredimage", async ( req:express.Request, res:express.Response ) => {
         try{
             let image_url = req.query.image_url;
             console.log(image_url)
@@ -54,7 +54,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req:express.Request, res:express.Response ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
